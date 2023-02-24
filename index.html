@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css" />
-    <script src="/assets/script.js"></script>
+    
 </head>
 <body>
     
     <div class="outer-container">
-        <div class="quiz-box">
+        <div class="quiz-box" class="hide">
             <div id="quiz">
             <div class="top-bar">
                 <span id="timer">Time:60</span>
@@ -23,23 +23,22 @@
                     
                 <p id="progress">Question 1 of 5</p> 
                 </div>
-                <p id="question">Arrays in JavaScript can be used to store _______?</p>
-<main>
-                <div class="inner-container">
-                    <button class="btn" id="btn0">
-                        A. <span id="choice0"></span>
-                    </button>
-                    <button class="btn" id="btn1">
-                        B. <span id="choice1"></span>
-                    </button>
-                    <button class="btn" id="btn2">
-                        C. <span id="choice2"></span>
-                    </button>
-                    <button class="btn" id="btn3">
-                        D. <span id="choice3"></span>
-                    </button>
+                <div id="question">Question</div>
+                <div id="answer-buttons" class="btn-Grid">
+
+                 
+                    <button class="btn"> A. Answer 1</button>
+                    <button class="btn"> B. Answer 2</button>
+                    <button class="btn"> C. Answer 3</button>
+                    <button class="btn"> D. Answer 4</button>
+                    
              </div>
-           <section class="completed-quiz-screen">
+            </div>
+            <div class="controls">
+                <button id="start-btn" class="start-btn btn">Start</button>
+                <button id="next-btn" class="next-btn btn hide">Next</button>
+            </div>
+           <section class="completed-quiz-screen" class="hide">
             <h2>Quiz Completed </h2>
             <p>Your Score: 00</p>
             <div>
@@ -48,7 +47,7 @@
                 <button>Submit</button>
             </div>
            </section>
-           <section class="high-scores-screen">
+           <section class="high-scores-screen" class="hide">
             <h2>High Scores</h2>
             <ol>
                 <li>GH -20</li>
@@ -58,16 +57,9 @@
                 <li>GH -20</li>  
             </ol>
            </section>
-            </main>
-             <footer>
-                <div class="bottom-bar">
-                    <button id="Start Quiz">Start</button>
+        
                 </div>
-                </footer>
             </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script> 
+            <script src="./assets/script.js"></script>
 </body>
 </html>
