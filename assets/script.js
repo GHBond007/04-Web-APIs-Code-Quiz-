@@ -1,32 +1,35 @@
 const startButton = document.getElementById('start-btn')
+const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById
 ('quiz-box')
-const questionElement = document.getElementById('questions')
-const answerButtonElement = document.getElementById('answer-buttons')
+const questionElement = document.getElementById('question')
+const answerButtonsElement = document.getElementById
+('answer-buttons')
 
-let shuffledQuestions , currentQuestionIndex
-
+let shuffledQuestions, currentQuestionIndex
+// here we are adding event listeners to get the game started 
+//and to continue to the next question
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click' , () =>  {
     currentQuestionIndex++
     setNextQuestion()
 })
-
+// This is the function to start the game
 function startGame () {
     console.log('Started')
     startButton.classList.add('hide')
-    shuffledQuestions =questions.sort(() => Math.random() - .5)
+    shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
 
 }
-
+// A function to set the next question
 function setNextQuestion() {
     showQuestion(shuffledQuestions[currentQuestionIndex])
 
 }
-
+// Here we are asking the app to show the question
 function showQuestion(question) {
     questionElement.innerText = question.question
     question.answers.forEach(answer =>  {
@@ -37,11 +40,11 @@ function showQuestion(question) {
         button.dataset.correct = answer.correct
     }
     button.addEventListener('click', selectAnswer)
-    answerButtonElement.appendChild(button)
+    answerButtonsElement.appendChild(button)
      })
 
     }
-
+// set up function to reset the questions after and answer
     function resetState() {
      clearStatusClass(document.body)
        nextButton.classList.add('hide')
@@ -52,7 +55,7 @@ function showQuestion(question) {
     }
     
 
-
+// This is a function to select the answers to the quiz
 function selectAnswer(e) { 
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
@@ -67,10 +70,22 @@ function selectAnswer(e) {
         startButton.classList.remove('hide')
     }
 }
-
+// function here is to set status for correct and wrong answers.
 function setStatusClass(element, correct) {
     clearStatusClass(element)
+    if (correct) {
+        element.classList.add('correct')
+    } else {
+        element.classList.add('wrong')
     }
+        
+    }
+// here we clear status class to wrong or correct.
+function clearStatusClass(element) {
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
+}
+// Here are the quiz questions.
 const questions = [
     {
         question : 'Which built-in method returns the calling string value converted to upper case?',
@@ -121,25 +136,23 @@ const questions = [
             {text: '4. map()', correct: false},
     
 ] 
-    },
-]
-
-
+    } ]
+// this is the part of the quiz that sets the timer in motion.
 let timerDisplay = document.getElementById('timer');
 let timerSecs = 0;
 let timerInterval = false;
 
-startQuiz();
-
-function startQuiz() {
-    if (document.getElementById('start').clicked == true) 
+startGame();
+// When we start the game the timer activates.
+function startGame() {
+    if (document.getElementById('start-btn').clicked == true) 
     {
         timerSecs = 60;
         timer();
     }
     
 }
-
+// The timer counts down
 function countDown() {
     timerInterval = setInterval(function(){
     timerSecs --;

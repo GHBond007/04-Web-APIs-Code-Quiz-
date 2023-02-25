@@ -51,7 +51,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
 }
+.quiz-box  #question {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: blue;
+    border: 1px solid #777;
+    border-width: 1px 0;
+    padding: 5px 0;
+}
+
 #high-score {
     color: blue;
     font-size: 1.5rem;
@@ -80,15 +91,6 @@
     float: right;
     
 }
-.quiz-box  #question {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: blue;
-    border: 1px solid #777;
-    border-width: 1px 0;
-    padding: 5px 0;
-}
-
 
 .btn {
     text-align: left;
@@ -115,48 +117,31 @@ background-color: var(--color-sec);
 
 }
 
-#score {
-    color: var(--black);
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 4rem;
-}
-.quiz-repeat  {
-    text-align: center;
-    margin: 0 auto;
-}
 
-.quiz-repeat  a {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #fff;
-    text-decoration: none;
-    background-color: blue;
-    padding: 1rem;
-    border-radius: 5px;
-    transition: all .3s;
+.btn.correct {
+    --hue:var(--hue-correct);
+    color: black;
 }
-
-.quiz-repeat,  a:hover {
-    background-color: var(--color-primary);
+.btn.wrong {
+    --hue:var(--hue-wrong);
 }
-
-
-.start-btn  {
+.start-btn, .next-btn  {
     text-align: center;
     margin: 10px;
-    padding: 5px ;
-    font-size: 3.5rem;
+    padding: 10px 20px;
+    font-size: 1.5rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: aqua;
 }
-.next-btn  {
-    text-align: center;
-    margin: 10px;
-    padding: 5px ;
-    font-size: 3.5rem;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: aqua;
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
 }
 button:hover {
     cursor: pointer;

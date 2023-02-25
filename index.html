@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Quiz App</title>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css" />
-    
+    <title>Quiz App</title>
 </head>
 <body>
     
     <div class="outer-container">
         <div class="quiz-box" class="hide">
             <div id="quiz">
+            
             <div class="top-bar">
                 <span id="timer">Time:60</span>
                 
@@ -24,20 +25,19 @@
                 <p id="progress">Question 1 of 5</p> 
                 </div>
                 <div id="question">Question</div>
-                <div id="answer-buttons" class="btn-Grid">
-
-                 
+                <div id="answer-buttons" class="btn-grid">
                     <button class="btn"> A. Answer 1</button>
                     <button class="btn"> B. Answer 2</button>
                     <button class="btn"> C. Answer 3</button>
                     <button class="btn"> D. Answer 4</button>
-                    
              </div>
             </div>
             <div class="controls">
                 <button id="start-btn" class="start-btn btn">Start</button>
                 <button id="next-btn" class="next-btn btn hide">Next</button>
             </div>
+        </div>
+            <div id="timer" class= "countdown">
            <section class="completed-quiz-screen" class="hide">
             <h2>Quiz Completed </h2>
             <p>Your Score: 00</p>
