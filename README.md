@@ -1,1 +1,4 @@
 # 04-Web-APIs-Code-Quiz-
+
+In this project I have created code from the start for a Quiz App.
+I have written the code in Html, CSS and javaScript to get the app to function. I have written the Html text needed for the App. Then I styled it with CSS to give it shape and color. The next part of the project was to create the javaScript code to make the app function. I installed a timer to start when the start button is clicked. I wrote some questions with a right answer and three incorrect answers. When one question is answered incorrectly the timer would subtract time off. when all the questions are answered the timer would reach zero. then the game would be over and i can save my initials and my score.
