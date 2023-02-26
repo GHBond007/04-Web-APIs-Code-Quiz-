@@ -6,7 +6,7 @@
 }
 
 
-.outer-container {
+.container {
     max-width: 900px;
     margin: auto;
     padding: 2rem;
@@ -15,21 +15,11 @@
     align-items: center;
     height: 100vh;
 }
-.top-bar #p  {
-    float: right;
-    display: inline-flex;
-    margin: 200px;
-    font-size: 20rem;
 
 
-}
 
-.top-bar #button {
-    float: left;
-    display: inline-flex
-}
 .quiz-box {
-    width: 1200px;
+    width: 900px;
     margin: 0 auto;
     background-color: #eee;
     padding: 1rem .5rem .5rem .5rem;
@@ -54,7 +44,7 @@
     font-size: 2rem;
     font-family: 'Times New Roman', Times, serif;
 }
-.quiz-box  #question {
+.quiz-box #question {
     font-size: 1.8rem;
     font-weight: 600;
     color: blue;
@@ -74,6 +64,7 @@
 
 }
 .quiz-header #progress {
+    float: left;
     color: var(--color-dark-grey);
     font-size: 1.6rem;
     font-weight: 700;
@@ -113,9 +104,10 @@
 }
 
 .btn:active {
-background-color: var(--color-sec);
-
+    background-color: var(color-sec);
 }
+
+
 
 
 .btn.correct {

@@ -5,8 +5,9 @@ const questionContainerElement = document.getElementById
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById
 ('answer-buttons')
+var showProgress = document.getElementById('progress')
 
-let shuffledQuestions, currentQuestionIndex
+let shuffledQuestions, currentQuestionIndex =  0
 // here we are adding event listeners to get the game started 
 //and to continue to the next question
 startButton.addEventListener('click', startGame)
@@ -16,13 +17,17 @@ nextButton.addEventListener('click' , () =>  {
 })
 // This is the function to start the game
 function startGame () {
-    console.log('Started')
     startButton.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
-    currentQuestionIndex = 0
+    currentQuestionIndex = 1
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
 
+}
+
+function showProgress() {
+    let currentQuestionIndex = quiz.currentQuestionIndex + 1;
+    let progressElement = document.getElementById('progress');
 }
 // A function to set the next question
 function setNextQuestion() {
@@ -142,9 +147,9 @@ let timerDisplay = document.getElementById('timer');
 let timerSecs = 0;
 let timerInterval = false;
 
-startGame();
+startTimer();
 // When we start the game the timer activates.
-function startGame() {
+function startTimer() {
     if (document.getElementById('start-btn').clicked == true) 
     {
         timerSecs = 60;
@@ -152,7 +157,7 @@ function startGame() {
     }
     
 }
-// The timer counts down
+// The timer countdown starts
 function countDown() {
     timerInterval = setInterval(function(){
     timerSecs --;
